@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--16 April 2022-->
+<!--10119200-->
+<!--Muhammad Jafar Shidik-->
+<!--IF-5-->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    style="@style/background"
     android:contentDescription="@string/scroll_view"
     tools:context=".MainActivity">
 
@@ -30,7 +36,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/ivCompanyLogo"
                     android:layout_width="@dimen/_48sdp"
                     android:layout_height="@dimen/_48sdp"
                     android:layout_marginStart="24dp"
@@ -41,17 +47,18 @@
                     app:srcCompat="@drawable/logo" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvTitleCompany"
                     style="@style/TextTitleRobotoMedium16Black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/company_name"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toEndOf="@+id/ivCompanyLogo"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tvCompanyMoto"
                     style="@style/TextLatoRegular12Gray"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -61,14 +68,14 @@
                     android:text="@string/company_moto"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textView9"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleCompany" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/ivUserAvatar"
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
@@ -78,24 +85,24 @@
             app:layout_constraintTop_toBottomOf="@+id/cvCompany" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvUserFullName"
             style="@style/TextTitleRobotoMedium16Black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/user_full_name"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+            app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
+            app:layout_constraintTop_toTopOf="@+id/ivUserAvatar" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvUserRole"
             style="@style/TextRobotoRegular14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="@string/user_role"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toStartOf="@+id/tvUserFullName"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserFullName" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -108,14 +115,14 @@
             app:cardCornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView">
+            app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tvTitleWorkingHours"
                     style="@style/TextRobotoMedium20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -128,7 +135,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvTitleWorkingHoursWithValue"
                     style="@style/TextRobotoMedium14Blue"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -136,10 +143,10 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/user_working_hours"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleWorkingHours" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvWorkingHour"
                     style="@style/TextRobotoBold20White"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -153,21 +160,22 @@
                     app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/ivClockIcon"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/shape_green_clock"
+                    android:contentDescription="@string/clock_icon"
                     android:padding="@dimen/_3sdp"
+                    android:scaleType="fitEnd"
                     app:layout_constraintBottom_toTopOf="@+id/guideline5"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintStart_toEndOf="@+id/tvWorkingHour"
                     app:layout_constraintTop_toTopOf="@+id/guideline3"
-                    app:srcCompat="@drawable/clock"
-                    android:contentDescription="@string/clock_icon" />
+                    app:srcCompat="@drawable/clock" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tvMinimumWorkingHour"
                     style="@style/TextLatoRegular12Gray"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -177,10 +185,10 @@
                     android:text="@string/title_minimum_working_hours"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvWorkingHour" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnCheckIn"
                     style="@style/Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -192,7 +200,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvMinimumWorkingHour" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline3"
@@ -213,8 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="259dp" />
-
+                    app:layout_constraintGuide_begin="244dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -236,7 +243,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tvTitleYourReport"
                     style="@style/TextRobotoMedium20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -249,7 +256,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tvFirstMonth"
                     style="@style/TextRobotoMedium16Green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -257,10 +264,10 @@
                     android:layout_marginTop="24dp"
                     android:text="@string/month_march"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleYourReport" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnCreateReport"
                     style="@style/Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -273,23 +280,22 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tvSecondMonth"
                     style="@style/TextRobotoMedium16Green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/month_april"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
-                    app:layout_constraintStart_toStartOf="@+id/gridLayout2"
-                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+                    app:layout_constraintBottom_toBottomOf="@+id/tvFirstMonth"
+                    app:layout_constraintStart_toStartOf="@+id/glSecondMonth"
+                    app:layout_constraintTop_toTopOf="@+id/tvFirstMonth" />
 
                 <androidx.gridlayout.widget.GridLayout
-                    android:id="@+id/gridLayout2"
+                    android:id="@+id/glSecondMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/gridLayout">
-
+                    app:layout_constraintTop_toTopOf="@+id/glFirstMonth">
 
                     <ImageView
                         android:id="@+id/squareMonthTwo"
@@ -581,18 +587,17 @@
                         app:layout_column="4"
                         app:layout_row="5" />
 
-
                 </androidx.gridlayout.widget.GridLayout>
 
                 <androidx.gridlayout.widget.GridLayout
-                    android:id="@+id/gridLayout"
+                    android:id="@+id/glFirstMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="48dp"
-                    app:layout_constraintBottom_toTopOf="@+id/button2"
-                    app:layout_constraintStart_toStartOf="@+id/textView10"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10">
+                    app:layout_constraintBottom_toTopOf="@+id/btnCreateReport"
+                    app:layout_constraintStart_toStartOf="@+id/tvFirstMonth"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFirstMonth">
 
                     <ImageView
                         android:id="@+id/squareMonthOne"
@@ -802,7 +807,8 @@
                         android:contentDescription="@string/daily_report"
                         android:src="@drawable/shape_report_green_bb3"
                         app:layout_column="0"
-                        app:layout_row="4" />
+                        app:layout_row="4"
+                        tools:ignore="TooManyViews" />
 
                     <ImageView
                         android:id="@+id/squareMonthOne22"
@@ -888,7 +894,7 @@
                     <ImageView
                         android:id="@+id/squareMonthOne30"
                         android:layout_width="28dp"
-                        android:layout_height="23dp"
+                        android:layout_height="28dp"
                         android:layout_margin="@dimen/_1sdp"
                         android:contentDescription="@string/daily_report"
                         android:src="@drawable/shape_report_green_bb3"
@@ -898,7 +904,7 @@
                     <ImageView
                         android:id="@+id/squareMonthOne31"
                         android:layout_width="28dp"
-                        android:layout_height="24dp"
+                        android:layout_height="28dp"
                         android:layout_margin="@dimen/_1sdp"
                         android:contentDescription="@string/daily_report"
                         android:src="@drawable/shape_report_green_bb3"
@@ -907,14 +913,13 @@
 
                 </androidx.gridlayout.widget.GridLayout>
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivPermission"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/permission"
@@ -923,20 +928,20 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivAttendance"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/attendance"
             android:src="@drawable/attendance"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/ivReport"
+            app:layout_constraintStart_toEndOf="@+id/ivPermission"
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivReport"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="42dp"
             android:contentDescription="@string/report"
@@ -947,52 +952,52 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tvAttendance"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/attendance"
-            app:layout_constraintEnd_toEndOf="@+id/imageView3"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintEnd_toEndOf="@+id/ivAttendance"
+            app:layout_constraintStart_toStartOf="@+id/ivAttendance"
+            app:layout_constraintTop_toBottomOf="@+id/ivAttendance" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tvPermission"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/permission"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintEnd_toEndOf="@+id/ivPermission"
+            app:layout_constraintStart_toStartOf="@+id/ivPermission"
+            app:layout_constraintTop_toBottomOf="@+id/ivPermission" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/tvReport"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/report"
             android:text="@string/report"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintEnd_toEndOf="@+id/ivReport"
+            app:layout_constraintStart_toStartOf="@+id/ivReport"
+            app:layout_constraintTop_toBottomOf="@+id/ivReport" />
 
         <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivAgenda"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/agenda"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="@+id/ivPermission"
+            app:layout_constraintStart_toStartOf="@+id/ivPermission"
+            app:layout_constraintTop_toBottomOf="@+id/tvPermission"
             app:srcCompat="@drawable/agenda" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/tvAgenda"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1000,23 +1005,23 @@
             android:layout_marginBottom="32dp"
             android:text="@string/agenda"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView6"
-            app:layout_constraintStart_toStartOf="@+id/imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintEnd_toEndOf="@+id/ivAgenda"
+            app:layout_constraintStart_toStartOf="@+id/ivAgenda"
+            app:layout_constraintTop_toBottomOf="@+id/ivAgenda" />
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivWiki"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/wiki"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintEnd_toEndOf="@+id/ivReport"
+            app:layout_constraintStart_toStartOf="@+id/ivReport"
+            app:layout_constraintTop_toBottomOf="@+id/tvReport"
             app:srcCompat="@drawable/wiki" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/tvWiki"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1024,23 +1029,23 @@
             android:layout_marginBottom="32dp"
             android:text="@string/wiki"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView7"
-            app:layout_constraintStart_toStartOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            app:layout_constraintEnd_toEndOf="@+id/ivWiki"
+            app:layout_constraintStart_toStartOf="@+id/ivWiki"
+            app:layout_constraintTop_toBottomOf="@+id/ivWiki" />
 
         <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivBooking"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/booking"
-            app:layout_constraintEnd_toEndOf="@+id/imageView3"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="@+id/ivAttendance"
+            app:layout_constraintStart_toStartOf="@+id/ivAttendance"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttendance"
             app:srcCompat="@drawable/book" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tvBooking"
             style="@style/TextRobotoRegular14Gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1048,9 +1053,9 @@
             android:layout_marginBottom="32dp"
             android:text="@string/booking"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView8"
-            app:layout_constraintStart_toStartOf="@+id/imageView8"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+            app:layout_constraintEnd_toEndOf="@+id/ivBooking"
+            app:layout_constraintStart_toStartOf="@+id/ivBooking"
+            app:layout_constraintTop_toBottomOf="@+id/ivBooking" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
